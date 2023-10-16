@@ -1,0 +1,53 @@
+/* Header.css */
+
+/* Apply styles to the entire header */
+.header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px 0;
+}
+
+/* Center content horizontally and add spacing */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Style the "React-Medicine" text */
+.header-left {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Style the cart button and icon */
+.cart-button {
+  display: flex;
+  align-items: center;
+}
+
+/* Style the cart icon */
+.bi-cart {
+  font-size: 1.5rem;
+  margin-right: 5px;
+}
+
+/* Make it responsive for small screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-left {
+    margin-bottom: 20px;
+  }
+
+  .bi-cart {
+    font-size: 1.2rem;
+    margin-right: 5px;
+  }
+}
+
+/* Add additional responsive styling for smaller devices as needed */
