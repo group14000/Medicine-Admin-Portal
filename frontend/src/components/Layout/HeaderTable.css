@@ -1,0 +1,68 @@
+/* HeaderTable.css */
+
+/* Styling for the container */
+.container {
+    padding: 20px;
+  }
+  
+  /* Styling for the main title */
+  h1 {
+    text-align: center;
+  }
+  
+  /* Styling for the input sections */
+  section {
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the input elements */
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Styling for the "Add Product" button */
+  .btn-primary {
+    width: 100%;
+  }
+  
+  /* Styling for the table */
+  table {
+    width: 100%;
+  }
+  
+  /* Styling for the table headers */
+  table th {
+    background-color: #f5f5f5;
+    text-align: left;
+  }
+  
+  /* Styling for the table rows */
+  table td {
+    border-top: 1px solid #ccc;
+  }
+  
+  /* Styling for the "Add To Cart" button in the table */
+  .btn-success {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+  }
+  
+  /* Responsive layout for smaller screens */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+  
+    .col-md-6 {
+      width: 100%;
+    }
+  
+    table {
+      overflow-x: auto;
+    }
+  }
+  
