@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './HeaderTable.css';
+
 const HeaderTable = () => {
   const [medicineName, setMedicineName] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [quantity, setQuantity] = useState('');
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
 
   const handleAddProduct = () => {
     if (medicineName && description && price && quantity) {
@@ -23,9 +25,13 @@ const HeaderTable = () => {
     }
   };
 
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+  };
+
   useEffect(() => {
     localStorage.setItem('products', JSON.stringify(products));
-  }, [products]);
+  }, [products, cart]);
 
   return (
     <div className="container">
@@ -89,8 +95,38 @@ const HeaderTable = () => {
                   <td>{product.price}</td>
                   <td>{product.quantity}</td>
                   <td>
-                    <button className="btn btn-success">Add To Cart</button>
+                    <button
+                      className="btn btn-success"
+                      onClick={() => addToCart(product)}
+                    >
+                      Add To Cart
+                    </button>
                   </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-12">
+          <h2>Cart</h2>
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Medicine Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cart.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.medicineName}</td>
+                  <td>{item.description}</td>
+                  <td>{item.price}</td>
+                  <td>{item.quantity}</td>
                 </tr>
               ))}
             </tbody>
